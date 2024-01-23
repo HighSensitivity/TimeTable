@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Time Table Website</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/mystyles.css" rel="stylesheet">
+	<script src="js/bootstrap.min.js"></script>
+    <script src="js/status.js"></script>
+
+	  <style>
+
+    .navbar {
+      padding: 20px;
+    }
+	
+	p, h1, h2, a, Marquee {
+	color: white;
+	}
+	/* For small devices (up to 576px) */
+@media (max-width: 576px) {
+  /* Adjust logo size for smaller screens */
+  .Logo {
+    max-width: 150px;
+  }
+  
+  /* Center-align the navbar items */
+  .navbar-nav {
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  /* Remove padding from navbar items */
+  .navbar-nav .nav-link {
+    padding: 20px;
+  }
+  
+  /* Add some bottom margin to navbar */
+  .navbar {
+    margin-bottom: 20px;
+  }
+}
+
+/* For medium devices (between 577px and 768px) */
+@media (min-width: 577px) and (max-width: 768px) {
+  /* Adjust logo size for medium screens */
+  .Logo {
+    max-width: 200px;
+  }
+}
+
+/* For large devices (above 768px) */
+@media (min-width: 769px) {
+  /* Reset logo size for larger screens */
+  .Logo {
+    max-width: none;
+  }
+}
+
+.container{
+	margin-top: 120px;
+}
+
+.imageClass {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #08080829;
+    padding: 20px;
+    max-width: 1110px;
+    margin-left: 116px;
+}
+
+.ttcontent-content1 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.column {
+flex-basis: 666px;
+    padding: 20px;
+    margin-left: 93px;
+}
+
+.column-1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 92px;
+}
+
+.column-2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.image img {
+   max-width: 187px;
+   margin-right: 116px;
+}
+
+h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+Marquee{
+    font-family: cursive;
+    font-size: x-large;
+	padding: 20px;
+	cursor: pointer;
+}
+
+footer {
+	margin-top: 50px;
+	margin-left: 40px;
+	
+}
+
+  </style>
+</head>
+<body>
+<header id="Header">
+	 
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="background-color: #212529 !important; box-shadow: 0px 3px 3px 0px rgba(0,0,0,0.3);">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+	<div class="collapse navbar-collapse" id="navbarNav">
+	
+	     <img src="https://i.imgur.com/W2VgqDY.png" class="Logo" alt="Logo">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">
+                        <i class="fas fa-home"></i> Home
+                    </a>
+                </li>
+				<li class="nav-item">
+                    <a class="nav-link" href="timetable.html">
+                        <i class="fa-solid fa-table-list"></i> Your TimeTable
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="about.html">
+                        <i class="fas fa-shopping-basket"></i> About
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contact.html">
+                        <i class="fas fa-envelope"></i> Contact Us
+                    </a>
+                </li>
+            </ul>
+        </div>
+		<ul class="navbar-nav ml-auto" id="userNav">
+	          <li class="nav-item">
+	            <a class="nav-link" href="signup.html">
+	              <i class="fas fa-key"></i> Create Account </a>
+	          </li>
+	          <li class="nav-item dropdown">
+	            <a class="nav-link" href="login.html">
+	              <i class="fas fa-user"></i> Sign-in </a>
+	          </li>
+	        </ul>
+	        <ul class="navbar-nav ml-auto" id="loggedInUserNav" style="display: none;">
+	          <li class="nav-item">
+	            <span class="btn btn-primary rounded-pill">
+	              <i class="fas fa-user"></i> 👋 <span id="loggedInUserEmail"></span>
+	            </span>
+	            <span class="nav-item btn btn-primary rounded-pill" onclick="logout()">
+	              <i class="fas fa-sign-out-alt"></i> Logout </span>
+	          </li>
+	        </ul>
+    </nav>
+</header>
+
+    <div class="container">
+        <h1>Welcome to My Time Table Website!</h1>
+        <p>Here you can find information about our services, learn more about us, and get in touch with us.</p>
+        <!-- Add the rest of your content for the Home page here -->
+		<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.</p>
+    </div>
+        <div class="container2">
+            <div class="subcontainer1 container">
+                <div class="overview">
+                    <h1 class="title white">What we do</h1>
+					<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.</p>
+                </div>
+            </div>
+        </div>
+		
+		        <div class="container3">
+            <div class="subContainer1 container">
+                <div class="overview">
+                    <h1 class="title white">How it works</h1>
+					<p>ext ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing LoremIt has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem</p>
+                </div>
+            </div>
+        </div>
+		
+		
+		<div class="imageClass">  
+			<div class="ttcontent-content1">
+			<div class="column column-1">
+				<section>
+					<div class="image">
+						<img src="img/1.jpg" alt="Image">
+					</div>
+				</section>
+			</div>
+
+			<div class="column column-2">
+				<section>
+					<h2>About Us</h2>
+					 <a href="article9.html">Welcome to our club newsletter. We are a community of enthusiasts passionate about our common interests. Welcome to our club newsletter. We are a community of enthusiasts passionate about our common interests. Welcome to our club newsletter. We are a community of enthusiasts passionate about our common interests. Welcome to our club newsletter. We are a community of enthusiasts passionate about our common interests. Welcome to our club newsletter. We are a community of enthusiasts passionate about our common interests.Welcome to our club newsletter. We are a community of enthusiasts passionate about our common interests.</a>
+				</section>
+			</div>
+			</div>
+		</div>
+		
+		        <div class="container4">
+            <div class="subContainer1 container">
+                <div class="overview">
+                    <h1 class="title white">Addtional Content</h1>
+					<p>ext ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing LoremIt has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem</p>
+                </div>
+            </div>
+        </div>
+    <div class="box">
+        <a>
+            <marquee class="GeneratedMarquee1" direction="left" scrollamount="15" behavior="scroll" onclick="window.location.href = 'signup.html';">Sign up today for your free timetable</marquee>
+        </a>
+    </div>
+ 
+
+<section class="info-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-lg-3">
+        <div class="info-box">
+          <h2>Title 1</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor tortor mauris, vel aliquam nisi tincidunt ut.</p>
+          <a href="#" class="btn btn-primary">Read More</a>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="info-box">
+          <h2>Title 2</h2>
+          <p>Phasellus tincidunt, justo ac dignissim varius, ipsum turpis aliquet metus, vitae volutpat elit magna quis elit.</p>
+          <a href="#" class="btn btn-primary">Read More</a>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="info-box">
+          <h2>Title 3</h2>
+          <p>Quisque efficitur, justo sed consequat hendrerit, ante diam tincidunt risus, id dapibus erat turpis id odio.</p>
+          <a href="#" class="btn btn-primary">Read More</a>
+        </div>
+      </div>
+     <div class="col-md-6 col-lg-3">
+        <div class="info-box">
+          <h2>Title 4</h2>
+          <p>Quisque efficitur, justo sed consequat hendrerit, ante diam tincidunt risus, id dapibus erat turpis id odio.</p>
+          <a href="#" class="btn btn-primary">Read More</a>
+        </div>
+      </div>	  
+
+    </div>
+  </div>
+</section>
+
+
+</body>
+
+<footer>
+    <div class="footer">
+        <p>&copy; 2024 @Train All rights reserved.</p>
+    </div>
+</footer>
+</html>

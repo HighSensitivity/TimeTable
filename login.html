@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Login Page</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/status.js"></script>
+	<link href="css/mystyles.css" rel="stylesheet">
+  </head>
+  <style>
+  
+  h1 {
+  text-align: center;
+ }
+ 
+     .navbar {
+      padding: 20px;
+    }
+	/* For small devices (up to 576px) */
+@media (max-width: 576px) {
+  /* Adjust logo size for smaller screens */
+  .Logo {
+    max-width: 150px;
+  }
+  
+  /* Center-align the navbar items */
+  .navbar-nav {
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  /* Remove padding from navbar items */
+  .navbar-nav .nav-link {
+    padding: 20px;
+  }
+  
+  /* Add some bottom margin to navbar */
+  .navbar {
+    margin-bottom: 20px;
+  }
+}
+
+/* For medium devices (between 577px and 768px) */
+@media (min-width: 577px) and (max-width: 768px) {
+  /* Adjust logo size for medium screens */
+  .Logo {
+    max-width: 200px;
+  }
+}
+
+/* For large devices (above 768px) */
+@media (min-width: 769px) {
+  /* Reset logo size for larger screens */
+  .Logo {
+    max-width: none;
+  }
+}
+
+.container {
+	margin-top: 70px;
+	}
+
+footer {
+	margin-top: 50px;
+	margin-left: 40px;
+}
+  </style>
+  <body>
+  <header id="Header">
+ 
+	 
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="background-color: #212529 !important; box-shadow: 0px 3px 3px 0px rgba(0,0,0,0.3);">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+	<div class="collapse navbar-collapse" id="navbarNav">
+	
+		 <img src="https://i.imgur.com/W2VgqDY.png" class="Logo" alt="Logo">
+		 
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">
+                        <i class="fas fa-home"></i> Home
+                    </a>
+                </li>
+				<li class="nav-item">
+                    <a class="nav-link" href="timetable.html">
+                        <i class="fa-solid fa-table-list"></i> Your TimeTable
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="about.html">
+                        <i class="fa-solid fa-circle-info"></i> About
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contact.html">
+                        <i class="fas fa-envelope"></i> Contact Us
+                    </a>
+                </li>
+            </ul>
+        </div>
+		<ul class="navbar-nav ml-auto" id="userNav">
+	          <li class="nav-item">
+	            <a class="nav-link" href="signup.html">
+	              <i class="fas fa-key"></i> Create Account </a>
+	          </li>
+	          <li class="nav-item dropdown">
+	            <a class="nav-link" href="login.html">
+	              <i class="fas fa-user"></i> Sign-in </a>
+	          </li>
+	        </ul>
+	        <ul class="navbar-nav ml-auto" id="loggedInUserNav" style="display: none;">
+	          <li class="nav-item">
+	            <span class="btn btn-primary rounded-pill">
+	              <i class="fas fa-user"></i> 👋 <span id="loggedInUserEmail"></span>
+	            </span>
+	            <span class="nav-item btn btn-primary rounded-pill" onclick="logout()">
+	              <i class="fas fa-sign-out-alt"></i> Logout </span>
+	          </li>
+	        </ul>
+    </nav>
+    <br>
+    <div class="container">
+      <div class="form-container">
+        <div class="card">
+          <div class="card-body">
+            <h1 class="card-title">Login</h1>
+            <form action="#" id="loginForm">
+              <div class="form-group">
+                <label for="uname">Username</label>
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">
+                      <i class="fas fa-envelope"></i>
+                    </span>
+                  </div>
+                  <input class="form-control" name="uname" id="uname" placeholder="Enter your email.." required>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="pwd">Password</label>
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">
+                      <i class="fas fa-lock"></i>
+                    </span>
+                  </div>
+                  <input type="password" class="form-control" name="pwd" id="pwd" placeholder="Enter your password.." required>
+                </div>
+              </div>
+              <div class="text-center">
+                <button type="button" class="btn btn-primary" onclick="login()">
+                  <i class="fas fa-sign-in-alt"></i> Sign In </button>
+              </div>
+            </form>
+            <hr>
+            <div class="text-center">
+              <p>Don't have an account? <a href="sign-up.html">Create an account</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+   <script src="js/login.js"></script>
+   
+</body>
+
+<footer>
+    <div class="footer">
+        <p>&copy; 2024 @Train All rights reserved.</p>
+    </div>
+</footer>
+</html>

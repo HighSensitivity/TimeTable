@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Time Table Website</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/mystyles.css" rel="stylesheet">
+	<script src="js/bootstrap.min.js"></script>
+    <script src="js/status.js"></script>
+	
+	<style>
+	.navbar {
+      padding: 20px;
+    }
+	.card-body, .text-center, .card-title {
+	background-color: #3e6cc800;
+	margin-top: 20px;
+	
+	}
+	
+	.card-title, p {
+	color: white;
+	}
+	
+	/* For small devices (up to 576px) */
+@media (max-width: 576px) {
+  /* Adjust logo size for smaller screens */
+  .Logo {
+    max-width: 150px;
+  }
+  
+  /* Center-align the navbar items */
+  .navbar-nav {
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  /* Remove padding from navbar items */
+  .navbar-nav .nav-link {
+    padding: 20px;
+  }
+  
+  /* Add some bottom margin to navbar */
+  .navbar {
+    margin-bottom: 20px;
+  }
+}
+
+/* For medium devices (between 577px and 768px) */
+@media (min-width: 577px) and (max-width: 768px) {
+  /* Adjust logo size for medium screens */
+  .Logo {
+    max-width: 200px;
+  }
+}
+
+/* For large devices (above 768px) */
+@media (min-width: 769px) {
+  /* Reset logo size for larger screens */
+  .Logo {
+    max-width: none;
+  }
+}
+
+footer {
+	margin-top: 50px;
+	margin-left: 40px;
+	
+}
+	</style>
+</head>
+<body>
+<header id="Header">
+	 
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="background-color: #212529 !important; box-shadow: 0px 3px 3px 0px rgba(0,0,0,0.3);">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+	<div class="collapse navbar-collapse" id="navbarNav">
+	
+	     <img src="https://i.imgur.com/W2VgqDY.png" class="Logo" alt="Logo">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">
+                        <i class="fas fa-home"></i> Home
+                    </a>
+                </li>
+				<li class="nav-item">
+                    <a class="nav-link" href="timetable.html">
+                        <i class="fa-solid fa-table-list"></i> Your TimeTable
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="about.html">
+                        <i class="fas fa-shopping-basket"></i> About
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contact.html">
+                        <i class="fas fa-envelope"></i> Contact Us
+                    </a>
+                </li>
+            </ul>
+        </div>
+		<ul class="navbar-nav ml-auto" id="userNav">
+	          <li class="nav-item">
+	            <a class="nav-link" href="signup.html">
+	              <i class="fas fa-key"></i> Create Account </a>
+	          </li>
+	          <li class="nav-item dropdown">
+	            <a class="nav-link" href="login.html">
+	              <i class="fas fa-user"></i> Sign-in </a>
+	          </li>
+	        </ul>
+	        <ul class="navbar-nav ml-auto" id="loggedInUserNav" style="display: none;">
+	          <li class="nav-item">
+	            <span class="btn btn-primary rounded-pill">
+	              <i class="fas fa-user"></i> 👋 <span id="loggedInUserEmail"></span>
+	            </span>
+	            <span class="nav-item btn btn-primary rounded-pill" onclick="logout()">
+	              <i class="fas fa-sign-out-alt"></i> Logout </span>
+	          </li>
+	        </ul>
+    </nav>
+</header>
+
+	    <div class="box"></div>
+	    <div class="container">
+	      <div class="card text-center">
+	        <div class="card-title h2"></div>
+	        <div class="card-body">
+	          <hr>
+	          <h5 class="card-title"> Welcome to ChronoPlan your go-to destination for creating and managing personalized timetables. </h5>
+	          <hr>
+	          
+
+<p class="card-text"> 
+
+Our platform is designed to simplify the process of organizing and structuring your daily, weekly, or monthly schedules, empowering you to make the most efficient use of your time.<br>
+At ChronoPlan, we understand that time management is a crucial aspect of achieving productivity and success in various areas of life, whether it be academic, professional, or personal. We believe that having a well-structured timetable not only helps individuals stay organized and focused but also enhances their overall productivity and sense of accomplishment.
+With our user-friendly interface and intuitive features, creating a timetable has never been easier. Our website offers a range of customizable templates and tools to suit your specific needs and preferences. Whether you're a student, a professional, or simply someone looking to optimize their daily routines, we provide a flexible platform that adapts to your unique requirements.
+Key Features:
+
+1. Easy Timetable Creation: Our website provides a seamless and hassle-free experience for creating and customizing timetables. You can easily input your activities, classes, meetings, and appointments, and our system will generate a visually appealing schedule for you.
+
+2. Flexibility and Customization: We understand that everyone's schedule is unique. That's why we offer a range of customization options, allowing you to personalize your timetable according to your preferences. You can choose different colors, fonts, and layouts to make your timetable visually appealing and easy to navigate.
+
+3. Interactive and Dynamic Interface: Our interactive interface enables you to make real-time adjustments to your timetable. You can easily add, delete, or modify activities as your schedule evolves, ensuring that you stay in control and up-to-date at all times.
+
+4. Reminders and Notifications: Never miss an important event or deadline again. Our website offers reminder and notification features, sending you timely alerts for upcoming activities or schedule changes, helping you stay organized and on top of your commitments.
+
+5. Sync Across Devices: Access your timetable anytime, anywhere. Our platform seamlessly syncs across multiple devices, allowing you to view and update your schedule from your computer, tablet, or smartphone, ensuring that you always have your timetable at your fingertips.
+
+At ChronoPlan, our mission is to empower individuals with effective time management tools, enabling them to achieve their goals and maximize their productivity. We are committed to providing a reliable and user-friendly platform that simplifies the process of creating and managing timetables, making organization and efficiency accessible to all.
+
+Join us today and unlock the full potential of your time!
+
+ChronoPlan - Your Time, Your Schedule, Your Success. </p>
+	        </div>
+	      </div>
+	    </div>
+</body>
+	<footer>
+    <div class="footer">
+        <p>&copy; 2024 @Train All rights reserved.</p>
+    </div>
+	</footer>
+</html>

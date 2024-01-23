@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Contact Us Page</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/mystyles.css" rel="stylesheet">
+	<script src="js/bootstrap.min.js"></script>
+    <script src="js/status.js"></script>
+<style>
+    .navbar {
+      padding: 20px;
+    }
+	
+	h1{
+	color: white;
+	}
+	/* For small devices (up to 576px) */
+@media (max-width: 576px) {
+  /* Adjust logo size for smaller screens */
+  .Logo {
+    max-width: 150px;
+  }
+  
+  /* Center-align the navbar items */
+  .navbar-nav {
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  /* Remove padding from navbar items */
+  .navbar-nav .nav-link {
+    padding: 20px;
+  }
+  
+  /* Add some bottom margin to navbar */
+  .navbar {
+    margin-bottom: 20px;
+  }
+}
+
+/* For medium devices (between 577px and 768px) */
+@media (min-width: 577px) and (max-width: 768px) {
+  /* Adjust logo size for medium screens */
+  .Logo {
+    max-width: 200px;
+  }
+}
+
+/* For large devices (above 768px) */
+@media (min-width: 769px) {
+  /* Reset logo size for larger screens */
+  .Logo {
+    max-width: none;
+  }
+}
+
+.col-md-6 {
+	margin-top: 30px;
+}
+
+footer {
+	margin-top: 50px;
+	margin-left: 40px;
+	
+}
+</style>
+	
+	
+</head>
+<body>
+<header id="Header">
+	 
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="background-color: #212529 !important; box-shadow: 0px 3px 3px 0px rgba(0,0,0,0.3);">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+	<div class="collapse navbar-collapse" id="navbarNav">
+	
+	     <img src="https://i.imgur.com/W2VgqDY.png" class="Logo" alt="Logo">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">
+                        <i class="fas fa-home"></i> Home
+                    </a>
+                </li>
+				<li class="nav-item">
+                    <a class="nav-link" href="timetable.html">
+                        <i class="fa-solid fa-table-list"></i> Your TimeTable
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="about.html">
+                        <i class="fas fa-shopping-basket"></i> About
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contact.html">
+                        <i class="fas fa-envelope"></i> Contact Us
+                    </a>
+                </li>
+            </ul>
+        </div>
+		<ul class="navbar-nav ml-auto" id="userNav">
+	          <li class="nav-item">
+	            <a class="nav-link" href="signup.html">
+	              <i class="fas fa-key"></i> Create Account </a>
+	          </li>
+	          <li class="nav-item dropdown">
+	            <a class="nav-link" href="login.html">
+	              <i class="fas fa-user"></i> Sign-in </a>
+	          </li>
+	        </ul>
+	        <ul class="navbar-nav ml-auto" id="loggedInUserNav" style="display: none;">
+	          <li class="nav-item">
+	            <span class="btn btn-primary rounded-pill">
+	              <i class="fas fa-user"></i> 👋 <span id="loggedInUserEmail"></span>
+	            </span>
+	            <span class="nav-item btn btn-primary rounded-pill" onclick="logout()">
+	              <i class="fas fa-sign-out-alt"></i> Logout </span>
+	          </li>
+	        </ul>
+    </nav>
+</header>
+    
+
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <h1 class="text-center mb-4">Contact Us</h1>
+      <form action="#" method="POST">
+        <div class="form-group">
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text">
+                <i class="far fa-user"></i>
+              </span>
+            </div>
+            <input type="text" class="form-control" name="name" placeholder="Your Name" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text">
+                <i class="far fa-envelope"></i>
+              </span>
+            </div>
+            <input type="email" class="form-control" name="email" placeholder="Your Email" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text">
+                <i class="fas fa-phone-alt"></i>
+              </span>
+            </div>
+            <input type="tel" class="form-control" name="phone" placeholder="Your Phone Number" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text">
+                <i class="far fa-comments"></i>
+              </span>
+            </div>
+            <textarea class="form-control" name="comment" placeholder="Your Comment" rows="5" required></textarea>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text">
+                <i class="fas fa-globe"></i>
+              </span>
+            </div>
+            <select class="form-control" name="country" required>
+              <option value="" disabled selected>Select your country</option>
+              <option value="T1">Trinidad</option>
+			  <option value="JM">Jamaica</option>
+			  <option value="T2">Tobago</option>
+			  <option value="SL">St. Lucia</option>
+			  
+            </select>
+          </div>
+        </div>
+        <br>
+        <div>
+          <button type="submit" class="btn btn-primary btn-block">
+            <i class="fas fa-paper-plane"></i> Submit
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+<script src="js/contact.js"></script>
+
+</body>
+
+<footer>
+    <div class="footer">
+        <p>&copy; 2024 @Train All rights reserved.</p>
+    </div>
+</footer>
+</html>

@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>My Time Table</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/mystyles.css" rel="stylesheet">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+ <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="js/status.js"></script>
+	
+
+<style>
+    .navbar {
+      padding: 20px;
+    }
+	
+	b, h2, th, td {
+	color: white;
+	}
+	
+	/* For small devices (up to 576px) */
+@media (max-width: 576px) {
+  /* Adjust logo size for smaller screens */
+  .Logo {
+    max-width: 150px;
+  }
+  
+  /* Center-align the navbar items */
+  .navbar-nav {
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  /* Remove padding from navbar items */
+  .navbar-nav .nav-link {
+    padding: 20px;
+  }
+  
+  /* Add some bottom margin to navbar */
+  .navbar {
+    margin-bottom: 20px;
+  }
+}
+
+/* For medium devices (between 577px and 768px) */
+@media (min-width: 577px) and (max-width: 768px) {
+  /* Adjust logo size for medium screens */
+  .Logo {
+    max-width: 200px;
+  }
+}
+
+/* For large devices (above 768px) */
+@media (min-width: 769px) {
+  /* Reset logo size for larger screens */
+  .Logo {
+    max-width: none;
+  }
+}
+
+.table-wrapper {
+		width: 100%;
+		margin:auto;
+        background: #5b474726;
+        padding: 20px;	
+        box-shadow: 0 1px 1px rgba(0,0,0,.05);
+    }
+    .table-title {
+        padding-bottom: 10px;
+        margin: 0 0 10px;
+    }
+    .table-title h2 {
+        margin: 6px 0 0;
+        font-size: 22px;
+    }
+    .table-title .add-new {
+    float: right;
+		height: 30px;
+		font-weight: bold;
+		font-size: 12px;
+		text-shadow: none;
+		min-width: 100px;
+		border-radius: 50px;
+		line-height: 13px;
+    }
+	.table-title .add-new i {
+		margin-right: 4px;
+	}
+    table.table {
+        table-layout: fixed;
+    }
+    table.table tr th, table.table tr td     {
+        border-color: #e9e9e9;
+    }
+    table.table th i {
+        font-size: 13px;
+        margin: 0 5px;
+        cursor: pointer;
+    }
+    table.table th:last-child {
+        width: 100px;
+    }
+    table.table td a {
+		cursor: pointer;
+        display: inline-block;
+        margin: 0 5px;
+		min-width: 24px;
+    }    
+	table.table td a.add {
+        color: #27C46B;
+    }
+    table.table td a.edit {
+        color: #FFC107;
+    }
+    table.table td a.delete {
+        color: #E34724;
+    }
+    table.table td i {
+        font-size: 19px;
+    }
+	table.table td a.add i {
+        font-size: 24px;
+    	margin-right: -1px;
+        position: relative;
+        top: 3px;
+    }    
+    table.table .form-control {
+        height: 32px;
+        line-height: 32px;
+        box-shadow: none;
+        border-radius: 2px;
+    }
+	table.table .form-control.error {
+		border-color: #f50000;
+	}
+	table.table td .add {
+		display: none;
+	}
+	
+	footer {
+	margin-top: 50px;
+	margin-left: 40px;
+	
+}
+</style>
+</head>
+<body>
+<header id="Header">
+	 
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="background-color: #212529 !important; box-shadow: 0px 3px 3px 0px rgba(0,0,0,0.3);">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+	<div class="collapse navbar-collapse" id="navbarNav">
+	 
+     <img src="https://i.imgur.com/W2VgqDY.png" class="Logo" alt="Logo">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">
+                        <i class="fas fa-home"></i> Home
+                    </a>
+                </li>
+				<li class="nav-item">
+                    <a class="nav-link" href="contact.html">
+                        <i class="fa-solid fa-table-list"></i> Your TimeTable
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="about.html">
+                        <i class="fa-solid fa-circle-info"></i> About
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contact.html">
+                        <i class="fas fa-envelope"></i> Contact Us
+                    </a>
+                </li>
+            </ul>
+        </div>
+		<ul class="navbar-nav ml-auto" id="userNav">
+	          <li class="nav-item">
+	            <a class="nav-link" href="signup.html">
+	              <i class="fas fa-key"></i> Create Account </a>
+	          </li>
+	          <li class="nav-item dropdown">
+	            <a class="nav-link" href="login.html">
+	              <i class="fas fa-user"></i> Sign-in </a>
+	          </li>
+	        </ul>
+	        <ul class="navbar-nav ml-auto" id="loggedInUserNav" style="display: none;">
+	          <li class="nav-item">
+	            <span class="btn btn-primary rounded-pill">
+	              <i class="fas fa-user"></i> 👋 <span id="loggedInUserEmail"></span>
+	            </span>
+	            <span class="nav-item btn btn-primary rounded-pill" onclick="logout()">
+	              <i class="fas fa-sign-out-alt"></i> Logout </span>
+	          </li>
+	        </ul>
+    </nav>
+</header>
+
+<div class="container">
+    <div class="table-wrapper">
+        <div class="table-title">
+            <div class="row">
+                <div class="col-sm-8"><h2>Your <b>TimeTable</b></h2></div>
+                <div class="col-sm-4">
+                    <button type="button" class="btn btn-info add-new"><i class="fa fa-plus"></i> Add New</button>
+                </div>
+            </div>
+        </div>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Course Code</th>
+                    <th>Course Title</th>
+                    <th>Credits</th>
+                    <th>Starts</th>
+                    <th>Ends</th>
+                    <th>Room</th>
+					<th>Instructor</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- No default rows here -->
+            </tbody>
+        </table>
+    </div>
+</div>     
+</body>
+<script>
+$(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip();
+    var actions = '<a class="add" title="Add" data-toggle="tooltip"><i class="fa-solid fa-plus"></i></a>' +
+                  '<a class="edit" title="Edit" data-toggle="tooltip"><i class="fa-solid fa-pen-to-square"></i></a>' +
+                  '<a class="delete" title="Delete" data-toggle="tooltip"><i class="fa-solid fa-trash"></i></a>';
+
+    // Load saved data from local storage
+    if(localStorage.getItem("tableData")){
+        $("table tbody").html(localStorage.getItem("tableData"));
+    }
+
+    // Append table with add row form on add new button click
+    $(".add-new").click(function(){
+        $(this).attr("disabled", "disabled");
+        var index = $("table tbody tr:last-child").index();
+        var row = '<tr>' +
+            '<td><input type="text" class="form-control" name="Course Code" id="cd"></td>' +
+            '<td><input type="text" class="form-control" name="Course Title" id="title"></td>' +
+            '<td><input type="text" class="form-control" name="Credits" id="ct"></td>' +
+            '<td><input type="text" class="form-control" name="Starts" id="start"></td>' +
+            '<td><input type="text" class="form-control" name="Ends" id="end"></td>' +
+            '<td><input type="text" class="form-control" name="Room" id="room"></td>' +
+            '<td><input type="text" class="form-control" name="Instructor" id="person"></td>' +
+            '<td>' + actions + '</td>' +
+        '</tr>';
+        $("table").append(row);
+        $("table tbody tr").eq(index + 1).find(".add, .edit").toggle();
+        $('[data-toggle="tooltip"]').tooltip();
+    });
+
+    // Add row on add button click
+    $(document).on("click", ".add", function(){
+        var empty = false;
+        var input = $(this).parents("tr").find('input[type="text"]');
+        input.each(function(){
+            if(!$(this).val()){
+                $(this).addClass("error");
+                empty = true;
+            } else{
+                $(this).removeClass("error");
+            }
+        });
+        $(this).parents("tr").find(".error").first().focus();
+        if(!empty){
+            input.each(function(){
+                $(this).parent("td").html($(this).val());
+            });			
+            $(this).parents("tr").find(".add, .edit").toggle();
+            $(".add-new").removeAttr("disabled");
+            saveDataToLocalStorage(); // Save data to local storage
+        }		
+    });
+
+    // Edit row on edit button click
+    $(document).on("click", ".edit", function(){		
+        $(this).parents("tr").find("td:not(:last-child)").each(function(){
+            var text = $(this).text();
+            $(this).html('<input type="text" class="form-control" value="' + text + '">');
+        });		
+        $(this).parents("tr").find(".add, .edit").toggle();
+        $(".add-new").attr("disabled", "disabled");
+    });
+
+    // Delete row on delete button click
+    $(document).on("click", ".delete", function(){
+        $(this).parents("tr").remove();
+        $(".add-new").removeAttr("disabled");
+        saveDataToLocalStorage(); // Save data to local storage
+    });
+
+    // Function to save data to local storage
+    function saveDataToLocalStorage(){
+        localStorage.setItem("tableData", $("table tbody").html());
+    }
+});
+</script>
+
+<footer>
+    <div class="footer">
+        <p>&copy; 2024 @Train All rights reserved.</p>
+    </div>
+</footer>
+</html>
